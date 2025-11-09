@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Page under construction - Stay tuned for updates">
+<title>Under Construction - The Collective</title>
+
+<link
+  href="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2155668701/settings_images/853c828-6c7-0c75-28e-a013f6f021_651e7b8748d661857600dd83.png?v=2"
+  rel="shortcut icon" />
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Degular;
+  }
+
+  @font-face {
+    font-family: Degular;
+    src: url(https://cdn.shopify.com/s/files/1/0705/9823/0307/files/Degular-Regular.otf);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000;
+    font-family: Degular;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://ucarecdn.com/d6f0f46e-0831-4c48-ae05-7204154c2c3e/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -3;
+    opacity: 0.3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.40) 50%, #380F48 100%), linear-gradient(180deg, #000 0%, #3B114C 100%);
+    z-index: -2;
+    opacity: 0.8;
+  }
+
+  .background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://ucarecdn.com/7349434e-f1bc-419f-9946-50eb7155d8f3/perspective_grid.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.15;
+  }
+
+  .background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(113.76% 150.82% at 0% -0.91%, rgba(139, 28, 184, 0.15) 0%, rgba(0, 0, 0, 0.10) 100%);
+    z-index: -1;
+  }
+
+  .construction-container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .construction-container h1 {
+    background: linear-gradient(282deg, #FFF 9.42%, #C6C6C6 162.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 70px;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  .construction-container h2 {
+    background: linear-gradient(90deg, #FFF 0%, #CFE5FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 20px;
+  }
+
+  .construction-container p {
+    color: #fff;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+    font-style: normal;
+    opacity: 0.9;
+    margin-bottom: 40px;
+  }
+
+  .construction-icon {
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(180deg, #380F48 0%, rgba(71, 13, 94, 0.00) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .construction-icon::before {
+    content: "🚧";
+    font-size: 100px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .construction-container h1 {
+      font-size: 50px;
+    }
+
+    .construction-container h2 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    .construction-container p {
+      font-size: 16px;
+    }
+
+    .construction-icon {
+      width: 150px;
+      height: 150px;
+    }
+
+    .construction-icon::before {
+      font-size: 80px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .construction-container {
+      padding: 20px 15px;
+    }
+
+    .construction-container h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .construction-container h2 {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 15px;
+    }
+
+    .construction-container p {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .construction-icon {
+      width: 120px;
+      height: 120px;
+      margin: 30px auto;
+    }
+
+    .construction-icon::before {
+      font-size: 60px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="background-overlay"></div>
+  <div class="background-gradient"></div>
+  <div class="construction-container">
+    <div class="construction-icon"></div>
+    <h1>Under Construction</h1>
+    <h2>Stay Tuned</h2>
+    <p>We're working on something amazing. Check back soon for updates!</p>
+  </div>
+</body>
+</html>
+
