@@ -3158,13 +3158,34 @@
 
     .footer_section .footer_main {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-items: flex-end;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      align-items: flex-start;
+      gap: 24px;
+      padding-bottom: 36px;
+    }
+
+    .footer_brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .footer_logo img {
+      max-width: 160px;
+    }
+
+    .footer_list {
+      align-self: center;
+      width: 100%;
     }
 
     .footer_list ul.footer_menu {
       display: flex;
-      gap: 20px;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
     }
 
     .footer_list ul.footer_menu li a {
@@ -3175,24 +3196,41 @@
       font-style: normal;
     }
 
-    .footer_logo {
+    .footer_contact {
       display: flex;
       flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer_contact_item {
+      display: flex;
       align-items: center;
-      gap: 14px;
-      text-align: center;
+      gap: 10px;
     }
 
-    .footer_logo .logo_image img {
-      max-width: 100%;
+    .footer_contact_icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      flex-shrink: 0;
     }
 
-    .footer_section .logo_text p {
-      color: #FFF;
-      font-size: 16px;
+    .footer_contact p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 15px;
       line-height: normal;
       font-weight: 400;
       font-style: normal;
+      margin-bottom: 0;
+    }
+
+    .footer_contact p a {
+      color: inherit;
+    }
+
+    .footer_social {
+      padding-top: 6px;
     }
 
     .footer_social ul.social_menu {
@@ -3209,33 +3247,49 @@
       display: flex;
     }
 
+    .footer_bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 20px;
+    }
+
+    .footer_bottom p {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 14px;
+      line-height: normal;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
     @media(max-width:1100px) {
       .footer_list ul.footer_menu li a {
         font-size: 14px;
       }
 
       .footer_list ul.footer_menu {
-        gap: 10px;
-      }
-    }
-
-    @media(min-width:991px) {
-      .footer_list .logo_text.mobile_copyright {
-        display: none !important;
+        gap: 12px;
       }
     }
 
     @media(max-width:991px) {
-      .footer_main .footer_list {
+      .footer_section .footer_main {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 32px;
         text-align: center;
       }
 
-      .footer_list .logo_text {
-        margin-top: 15px;
+      .footer_brand {
+        align-items: center;
       }
 
-      .footer_logo .logo_text {
-        display: none;
+      .footer_contact_item {
+        justify-content: center;
+      }
+
+      .footer_social ul.social_menu {
+        justify-content: center;
       }
     }
 
@@ -3611,21 +3665,6 @@
       /* Footer */
       .footer_section {
         padding: 84px 20px 20px;
-      }
-
-      .footer_section .footer_main {
-        grid-template-columns: 1fr;
-        row-gap: 16px;
-        justify-items: center;
-      }
-
-      .footer_main .footer_list {
-        grid-row: 3;
-      }
-
-
-      .footer_social ul.social_menu {
-        justify-content: flex-start;
       }
     }
 
@@ -4042,6 +4081,474 @@
         left: -10px;
       }
 
+    }
+
+    /* Footer refresh */
+    .footer_section {
+      padding: clamp(48px, 6vw, 88px) 6.9vw 24px;
+      color: #fff;
+    }
+
+    .footer_intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      align-items: end;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .footer_kicker,
+    .footer_label {
+      color: #c684e1;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer_intro h2 {
+      max-width: 720px;
+      margin-top: 14px;
+      color: #fff;
+      font-size: clamp(42px, 5vw, 76px);
+      font-weight: 500;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+    }
+
+    .footer_intro_action {
+      justify-self: end;
+      max-width: 330px;
+    }
+
+    .footer_intro_action p {
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .footer_cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      min-width: 174px;
+      padding: 13px 17px 13px 20px;
+      border: 1px solid #c684e1;
+      border-radius: 50px;
+      background: #c684e1;
+      color: #190b1f;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .footer_cta span {
+      font-size: 20px;
+      line-height: 0.7;
+    }
+
+    .footer_cta:hover {
+      transform: translateY(-2px);
+      border-color: #fff;
+      background: #fff;
+      color: #190b1f;
+    }
+
+    .footer_section .footer_main {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.5fr) repeat(3, minmax(130px, 1fr));
+      align-items: start;
+      gap: 32px;
+      padding: 48px 0 52px;
+    }
+
+    .footer_identity .footer_logo img {
+      width: 116px;
+      height: auto;
+      max-width: 116px;
+      object-fit: contain;
+    }
+
+    .footer_note {
+      max-width: 260px;
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .footer_label {
+      display: block;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.46);
+      font-size: 11px;
+    }
+
+    .footer_menu,
+    .footer_legal,
+    .social_menu {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer_menu {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .footer_menu li,
+    .footer_legal li,
+    .social_menu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer_menu a,
+    .footer_contact a,
+    .footer_legal a {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 16px;
+      line-height: 1.15;
+      transition: color 180ms ease;
+    }
+
+    .footer_menu a:hover,
+    .footer_contact a:hover,
+    .footer_legal a:hover {
+      color: #c684e1;
+    }
+
+    .footer_contact {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer_contact address {
+      max-width: 210px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 16px;
+      font-style: normal;
+      line-height: 1.3;
+    }
+
+    .footer_contact .footer_contact_line {
+      display: block;
+    }
+
+    .footer_social_group {
+      justify-self: end;
+    }
+
+    .social_menu {
+      gap: 10px;
+    }
+
+    .social_menu a {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .social_menu a:hover {
+      transform: translateY(-2px);
+      border-color: #c684e1;
+      background: rgba(198, 132, 225, 0.14);
+    }
+
+    .social_menu img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .footer_bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .footer_bottom p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .footer_legal {
+      gap: 24px;
+    }
+
+    .footer_legal a {
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 14px;
+    }
+
+    .footer_cta:focus-visible,
+    .footer_menu a:focus-visible,
+    .footer_contact a:focus-visible,
+    .footer_legal a:focus-visible,
+    .social_menu a:focus-visible {
+      outline: 2px solid #c684e1;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 991px) {
+      .footer_intro {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer_intro_action {
+        justify-self: start;
+      }
+
+      .footer_section .footer_main {
+        grid-template-columns: 1.3fr 1fr 1fr;
+        justify-items: initial;
+        text-align: left;
+      }
+
+      .footer_social_group {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer_section {
+        padding: 52px 20px 20px;
+      }
+
+      .footer_intro {
+        gap: 24px;
+        padding-bottom: 40px;
+      }
+
+      .footer_intro h2 {
+        max-width: 420px;
+        font-size: clamp(42px, 14vw, 62px);
+      }
+
+      .footer_section .footer_main {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 24px;
+        padding: 40px 0;
+      }
+
+      .footer_identity {
+        grid-column: 1 / -1;
+      }
+
+      .footer_bottom {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        gap: 16px;
+      }
+
+      .footer_legal {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer_cta,
+      .social_menu a {
+        transition: none;
+      }
+    }
+
+    /* FAQ chat bridge */
+    .faq_chat_section {
+      padding: 0 6.9vw clamp(72px, 8vw, 120px);
+    }
+
+    .faq_chat_card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+      align-items: center;
+      gap: 48px;
+      overflow: hidden;
+      padding: clamp(30px, 4vw, 54px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(198, 132, 225, 0.18), transparent 34%),
+        linear-gradient(135deg, rgba(52, 6, 71, 0.92), rgba(19, 7, 28, 0.86));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .faq_chat_card::after {
+      position: absolute;
+      right: -8%;
+      bottom: -80px;
+      width: 360px;
+      height: 180px;
+      border: 1px solid rgba(198, 132, 225, 0.16);
+      border-radius: 50%;
+      content: "";
+      transform: rotate(-12deg);
+      pointer-events: none;
+    }
+
+    .faq_chat_copy,
+    .faq_chat_action {
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq_chat_kicker {
+      margin-bottom: 14px;
+      color: #c684e1;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .faq_chat_copy h2 {
+      max-width: 600px;
+      color: #fff;
+      font-size: clamp(34px, 4vw, 58px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+    }
+
+    .faq_chat_copy p:last-child {
+      max-width: 430px;
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .faq_chat_action {
+      justify-self: end;
+      max-width: 270px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .faq_chat_action strong {
+      display: block;
+      margin-bottom: 12px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .faq_chat_embed {
+      position: relative;
+      z-index: 1;
+      grid-column: 1 / -1;
+      width: min(100%, 900px);
+      min-height: 500px;
+      margin: 6px auto 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 18px 60px rgba(8, 2, 16, 0.22);
+    }
+
+    .faq_chat_embed [data-chat-widget] {
+      width: 100%;
+      min-height: 500px;
+    }
+
+    .faq_chat_embed chat-widget {
+      position: static !important;
+      inset: auto !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: none !important;
+      transform: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .faq_chat_section {
+        padding: 0 20px 72px;
+      }
+
+      .faq_chat_card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px 24px;
+      }
+
+      .faq_chat_action {
+        justify-self: start;
+      }
+
+      .faq_chat_embed,
+      .faq_chat_embed [data-chat-widget],
+      .faq_chat_embed chat-widget {
+        min-height: 480px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .faq_chat_card::after {
+        transform: none;
+      }
+    }
+
+    /* Keep the embedded chat visually native to the page. */
+    .faq_chat_section {
+      padding-top: clamp(48px, 6vw, 88px);
+      background: url(./assets1/bg-13.png) bottom center / cover no-repeat;
+    }
+
+    .faq_chat_card {
+      display: block;
+      padding: 0;
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .faq_chat_card::after,
+    .faq_chat_copy,
+    .faq_chat_action {
+      display: none;
+    }
+
+    .faq_chat_embed {
+      width: min(100%, 900px);
+      min-height: 0;
+      margin: 0 auto;
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .faq_chat_embed [data-chat-widget],
+    .faq_chat_embed chat-widget {
+      min-height: 350px;
     }
   </style>
 
@@ -6434,6 +6941,51 @@
     </div>
 
 
+    <!-- Chat widget bridge -->
+    <section class="faq_chat_section" aria-label="Chat with The Collective">
+      <div class="page_width">
+        <div class="faq_chat_card">
+            <div class="faq_chat_embed" aria-label="Chat with The Collective">
+              <div
+                data-chat-widget
+                data-widget-id="6a96ee2ceb06b512c2db48a5"
+                data-location-id="vuzTomp9iLY8aERF1GpJ"
+                style="--chat-widget-primary-color: #8b1cb8; --chat-widget-active-color: #c684e1;">
+              </div>
+
+              <script
+                src="https://widgets.leadconnectorhq.com/loader.js"
+                data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+                data-widget-id="6a96ee2ceb06b512c2db48a5"
+                data-source="WEB_USER">
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <script>
+      (function () {
+        function keepLeadConnectorInFaq() {
+          var mount = document.querySelector('.faq_chat_embed');
+          var widget = document.querySelector('chat-widget');
+
+          if (!mount || !widget || mount.contains(widget)) return;
+
+          mount.appendChild(widget);
+          widget.style.setProperty('position', 'static', 'important');
+          widget.style.setProperty('inset', 'auto', 'important');
+          widget.style.setProperty('display', 'block', 'important');
+          widget.style.setProperty('width', '100%', 'important');
+          widget.style.setProperty('max-width', 'none', 'important');
+          widget.style.setProperty('transform', 'none', 'important');
+        }
+
+        window.addEventListener('LC_chatWidgetLoaded', keepLeadConnectorInFaq, false);
+        window.setTimeout(keepLeadConnectorInFaq, 0);
+      })();
+    </script>
+
     <div class="loginform_footer_linear">
 
       <!-- Login Form -->
@@ -6487,53 +7039,73 @@
       </section>
 
       <!-- Footer -->
-      <section class="footer_section" id="footer_section">
+      <section class="footer_section" id="footer_section" aria-labelledby="footer-title">
         <div class="tc_width">
-          <div class="footer_main">
-            <div class="footer_list">
-              <ul class="footer_menu">
-                <li><a
-                    href="https://www.termsandconditionsgenerator.com/live.php?token=PKWfXPmRHRFqOfAGfUwJ8Z82rYPWrHGU">Terms
-                    & Conditions</a></li>
-                <!-- <li><a href="https://www.thecollective.xyz/privacy-policy">Privacy Policy</a></li>
-              <li><a href="https://www.thecollective.xyz/contact">Contact us</a></li> -->
-                <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=PKWfXPmRHRFqOfAGfUwJ8Z82rYPWrHGU">Privacy Policy</a></li>
-                <li><a href="/under-construction.html">Contact us</a></li>
-              </ul>
-              <div class="logo_text mobile_copyright">
-                <p>@ 2025 The Collective</p>
-              </div>
+          <!-- <div class="footer_intro">
+            <div>
+              <p class="footer_kicker">The Collective</p>
+              <h2 id="footer-title">Find your people. Build what's next.</h2>
             </div>
-            <div class="footer_logo">
-              <div class="logo_image">
-                <a href="https://www.thecollective.xyz/">
-                  <img src="./assets1/image-53.png"
-                    alt="The Collective" loading="lazy" decoding="async">
+            <div class="footer_intro_action">
+              <p>Stay connected to the ideas, people, and opportunities moving the community forward.</p>
+              <a class="footer_cta" href="/under-construction.html">
+                <span>Contact us</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div> -->
+
+          <div class="footer_main">
+            <div class="footer_identity">
+              <div class="footer_logo">
+                <a href="https://www.thecollective.xyz/" aria-label="The Collective home">
+                  <img src="./assets1/image-53.png" alt="The Collective" loading="lazy" decoding="async">
                 </a>
               </div>
-              <div class="logo_text">
-                <p>@ 2025 The Collective</p>
+              <p class="footer_note">A community for business owners, entrepreneurs, and future-forward leaders.</p>
+            </div>
+            <nav class="footer_group" aria-label="Explore">
+              <span class="footer_label">Explore</span>
+              <ul class="footer_menu">
+                <li><a href="#thecollective_membership">Membership</a></li>
+                <li><a href="#thecollective_mastermind">Masterminds</a></li>
+                <li><a href="#thecollective_stories">Stories</a></li>
+                <li><a href="#thecollective_joinus">Join us</a></li>
+              </ul>
+            </nav>
+
+            <div class="footer_group">
+              <span class="footer_label">Contact</span>
+              <div class="footer_contact">
+                <address>1065 SW 8th St, Unit #394, Miami, FL 33130</address>
+                <a class="footer_contact_line" href="tel:+19543250527">954 325 0527</a>
               </div>
             </div>
-            <div class="footer_social">
+
+            <div class="footer_group footer_social_group">
+              <span class="footer_label">Follow</span>
               <ul class="social_menu">
-                <li><a href="https://www.facebook.com/thecollectiveai" target="_blank"><img
-                      src="./assets1/image-54.png"
-                      alt="The Collective" loading="lazy" decoding="async"></a></li>
-                <li><a href="https://www.instagram.com/the.collective.ai/" target="_blank"><img
-                      src="./assets1/image-55.svg"
-                      alt="The Collective" loading="lazy" decoding="async"></a></li>
-                <!-- <li><a href="#"><img
-              src="./assets1/image-56.svg"
-              alt="The Collective" loading="lazy" decoding="async"></a></li>
-  <li><a href="#"><img
-              src="./assets1/image-57.svg"
-              alt="The Collective" loading="lazy" decoding="async"></a></li>
-  <li><a href="#"><img
-              src="./assets1/image-58.svg"
-              alt="The Collective" loading="lazy" decoding="async"></a></li> -->
+                <li>
+                  <a href="https://www.facebook.com/thecollectiveai" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow The Collective on Facebook">
+                    <img src="./assets1/image-54.png" alt="" loading="lazy" decoding="async">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/the.collective.ai/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow The Collective on Instagram">
+                    <img src="./assets1/image-55.svg" alt="" loading="lazy" decoding="async">
+                  </a>
+                </li>
               </ul>
             </div>
+          </div>
+          <div class="footer_bottom">
+            <p>&copy; 2025 The Collective</p>
+            <ul class="footer_legal">
+              <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=PKWfXPmRHRFqOfAGfUwJ8Z82rYPWrHGU">Terms &amp; Conditions</a></li>
+              <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=PKWfXPmRHRFqOfAGfUwJ8Z82rYPWrHGU">Privacy Policy</a></li>
+            </ul>
           </div>
         </div>
       </section>
