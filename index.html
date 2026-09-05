@@ -2996,25 +2996,44 @@
       background-repeat: no-repeat;
       border-radius: 20px;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       gap: 70px;
-      padding-right: 12px;
+      padding: 40px 12px 40px 40px;
+    }
+
+    .login_form_section .form_left {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
     }
 
     .login_form_main .form_image {
-      width: 45%;
+      width: 100%;
+      margin-top: 28px;
+      flex: 1 1 0;
+      min-height: 220px;
+      max-height: 420px;
+      overflow: hidden;
+      border-radius: 20px;
     }
 
     .login_form_main .form_image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
       border-radius: 20px;
     }
 
     .login_form_section .form_content {
       width: 100%;
       max-width: 576px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .form_content .subheading h4 {
+    .form_left .subheading h4 {
       background: linear-gradient(90deg, #8B1CB8 17.39%, #9676FF 90.46%);
       background-clip: text;
       -webkit-background-clip: text;
@@ -3025,11 +3044,11 @@
       font-style: normal;
     }
 
-    .form_content .heading {
+    .form_left .heading {
       padding-top: 12px;
     }
 
-    .form_content .heading h2 {
+    .form_left .heading h2 {
       background: linear-gradient(284deg, #FBAFFF -32.68%, #FFF 118.56%);
       background-clip: text;
       -webkit-background-clip: text;
@@ -3038,6 +3057,56 @@
       line-height: 35px;
       font-weight: 600;
       font-style: normal;
+    }
+
+    .form_left .form_business_info {
+      padding: 18px 0 0;
+      max-width: 480px;
+    }
+
+    .form_left .form_business_info p {
+      color: #FFF;
+      opacity: 0.75;
+      font-size: 15px;
+      line-height: 23px;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .form_left .form_business_contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .form_business_contact_item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form_business_contact_item svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: #c684e1;
+    }
+
+    .form_business_contact_item span,
+    .form_business_contact_item a {
+      color: #FFF;
+      opacity: 0.9;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .form_business_contact_item a:hover {
+      color: #c684e1;
     }
 
     .form_content .form_group_main {
@@ -3145,7 +3214,7 @@
 
     @media only screen and (max-width: 1180px) {
 
-      .form_content .heading h2 {
+      .form_left .heading h2 {
         font-size: 30px;
         line-height: 30px;
       }
@@ -3952,7 +4021,12 @@
         background-image: url(./assets1/bg-17.png);
         flex-direction: column;
         gap: 38px;
-        padding-right: 0;
+        padding: 28px 24px;
+      }
+
+      .login_form_section .form_left {
+        width: 100%;
+        text-align: center;
       }
 
       .login_form_main .form_image {
@@ -3966,7 +4040,7 @@
       .login_form_section .form_content {
         text-align: center;
         max-width: 100%;
-        padding: 0 35px 50px;
+        padding: 0;
       }
 
       .form_content form {
@@ -3981,6 +4055,18 @@
 
       .form_content .form_group input {
         text-align: center;
+      }
+
+      .form_left .form_business_info {
+        max-width: 100%;
+      }
+
+      .form_left .form_business_contact {
+        justify-content: center;
+      }
+
+      .form_business_contact_item {
+        justify-content: center;
       }
     }
 
@@ -4548,7 +4634,7 @@
 
     .faq_chat_embed [data-chat-widget],
     .faq_chat_embed chat-widget {
-      min-height: 350px;
+      min-height: 700px;
     }
   </style>
 
@@ -6947,12 +7033,38 @@
       <section class="login_form_section" id="login_form_section">
         <div class="tc_width">
           <div class="login_form_main">
-            <div class="form_image">
-              <img class="desktop_image"
-                src="./assets1/image-51.jpg"
-                alt="The Collective" loading="lazy" decoding="async">
-              <img class="mobile_image" src="./assets1/image-52.png"
-                alt="The Collective" loading="lazy" decoding="async">
+            <div class="form_left">
+              <div class="subheading">
+                <h4>The Collective</h4>
+              </div>
+              <div class="heading">
+                <h2>Talk to a real person on our team.</h2>
+              </div>
+              <div class="form_business_info">
+                <p>The Collective is a membership community and mastermind network for business owners, entrepreneurs, and future-forward leaders, offering AI tools, coaching, and peer connection to help members grow their businesses.</p>
+                <div class="form_business_contact">
+                  <div class="form_business_contact_item">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                      <circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <span>1065 SW 8th St, Unit #394, Miami, FL 33130</span>
+                  </div>
+                  <div class="form_business_contact_item">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    </svg>
+                    <a href="tel:+19543250527">954 325 0527</a>
+                  </div>
+                </div>
+              </div>
+              <div class="form_image">
+                <img class="desktop_image"
+                  src="./assets1/image-51.jpg"
+                  alt="The Collective" loading="lazy" decoding="async">
+                <img class="mobile_image" src="./assets1/image-52.png"
+                  alt="The Collective" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="form_content">
               <div class="faq_chat_embed" aria-label="Chat with The Collective">
